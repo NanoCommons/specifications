@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exposing cited literature</title>
+    <script src='js/respec.js' class='remove'></script>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+    <script class='remove'>
+      var respecConfig = {
+          // document info
+          orguri:               "http://specs.enanomapper.org/",
+          orgicon:              "<a href='http://www.enanomapper.org/'><img height='100' src='https://2.gravatar.com/avatar/cd62e4c29f50b85fb990e8441dda05c9?d=https%3A%2F%2Fidenticons.github.com%2Fc415e95d76a4f8c996bf361cb035d961.png&r=x&s=140' alt='eNanoMapper'/></a>",
+          customorg:            "eNanoMapper",
+          customcss:            "../css/enm.css",
+          overrideCopyright:    "<p class='copyright'>This document is licensed under a <a class='subfoot' href='http://creativecommons.org/licenses/by-sa/4.0/' rel='license'>Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>",
+          specStatus:           "ED",
+          shortName:            "altmetric",
+          publishDate:   "2014-03-10",
+          // previousMaturity: "WD",
+          // previousPublishDate:  "2009-03-15",
+          // previousURI : "http://dev.w3.org/2009/dap/ReSpec.js/documentation.html",
+          copyrightStart:       "2014",
+          // edDraftURI:           "http://",
+          // lcEnd:  "2010-08-06",
+          // extraCSS:             ["../css/respec.css"],
+          // extraCSS:             ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
+
+          // editors (optional)
+          editors:  [
+             { name: "Egon Willighagen", url: "http://chem-bla-ics.blogpost.com/",
+                company: "Maastricht University", companyURL: "http://www.maastrichtuniversity.nl/" },
+          ],
+          authors:  [
+             { name: "Nina Jeliazkova",
+                company: "IdeaConsult Ltd.", companyURL: "http://ideaconsult.com/", },
+             { name: "Andra Waagmeester",
+                company: "Maastricht University", companyURL: "http://www.maastrichtuniversity.nl/" },
+             { name: "Egon Willighagen", url: "http://chem-bla-ics.blogpost.com/",
+                company: "Maastricht University", companyURL: "http://www.maastrichtuniversity.nl/" },
+          ],
+          
+          // WG
+          //wg:           "People Who Like To Write Specs Help Group",
+          //wgURI:        "http://berjon.com/",
+          //wgPublicList: "spec-writers-anonymous",
+          //wgPatentURI:  "",
+      };
+    </script>
+</head>
+
+<body>
+  <section id="sotd">
+    <h4>Intended audience</h4>
+    <p>
+      This document is aimed at database maintainers.
+    </p>
+  </section>
+  <section id="abstract">
+    <p>In an era where accountability is central to science, counting reuse of scientific output must be done carefully.
+    Where scientific output was restricted to articles and books in the past, now the situation is much more complex.
+    More prominent nowadays is scientific output collected in databases, and focus is given to being able to cite
+    data, in addition to conference abstracts and posters earlier.<p>
+    <p>This specification is about exposing what published literature is being references in databases. In particular,
+    it details how a database can report how much data is extracted from a paricular paper, and outlines how this
+    information can be retrieved.</p>
+  </section>
+  <section class='informative'>
+    <h2>Introduction</h2>
+    <p>
+      <a href="https://en.wikipedia.org/wiki/Altmetrics">Altmetrics</a> is a term generally used to refer to metrics that count the amount of impact of
+      research output. For publications it can count the number of times people have bookmarked it at services
+      like Mendeley, Zotero, and CiteULike, but it can also measure the number of pages views the publication
+      has received.
+    </p>
+    <p>
+      This specification defines another altmetric: the amount of data from this paper that is found in databases.
+      To expose such data, this specification defined a application programming interface (API) to query for such data.
+      This idea leverages from the work by Andra Waagmeester on <a href="http://citedin.org/">CitedIn</a> [[Willighagen2013]],
+      which uses this approach, but does not formalize an API.
+    </p>
+    <p>
+      The API is composed of two parts: one is the query interface that defines how the database can be queried; the
+      second part is the format of the answer returned by the database. The implementation of the API can be done
+      in various methods: first, there is a REST-like approach; the second is via a SPARQL end point.
+    </p>    
+  </section>
+  <section class='normative'>
+    <h2>REST-like API</h2>
+    <p>
+      Databases implementing this specification must provide an API that uses crafted URIs to specify the queries.
+    </p>
+    <h3>Queries</h3>
+    <h4>Data by DOI</h4>
+    <p>
+      This query asks for all entries that cite a particular reference identified by its DOI:
+    </p>
+    <pre>
+      http://example.org/entries/byDOI/$doi
+    </pre>
+    <h3>Return format</h3>
+    <p>
+      The query results are provided as RDF as N-TRIPLES using the CiTO predicate <code>cito:citesAsDataSource</code>.
+      For example:
+    </p>
+    <pre class="N-TRIPLES">
+      &lt;http://example.org/entry/substance28490> &lt;http://purl.org/spar/cito/citesAsDataSource> &lt;http://dx.doi.org/10.1126/science.1157784> .
+    </pre>
+  </section>
+  <section class='normative'>
+    <h2>SPARQL API</h2>
+    <p>
+      Databases implementing this query type must provide an API that uses crafted URIs to specify the queries.
+    </p>
+    <h3>Queries</h3>
+    <h4>Data by DOI</h4>
+    <p>
+      This query asks for all entries that cite a particular reference identified by its DOI:
+    </p>
+    <pre class="SPARQL">
+      SELECT * WHERE {
+        ?entry &lt;http://purl.org/spar/cito/citesAsDataSource> &lt;$doi> .
+        OPTIONAL { ?entry a ?type . }
+      }
+    </pre>
+    <h3>Return format</h3>
+    <p>
+      Any format specified by the SPARQL specification is allowed.
+  </section>
+</body>
+
+</html>
