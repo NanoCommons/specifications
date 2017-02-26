@@ -11,6 +11,9 @@ While the license would typically allow you to make modifications, it is
 kindly requested to do this in a communal manner, as to not disrupt the
 standardization process. Hence, we speak of Open Specifications.
 
+* [eNanoMapper Ontology IRIs for the JRC representative industrial nanomaterials](http://specs.enanomapper.net/jrc/)
+* [eNanoMapper Ontology IRIs for the OECD nanomaterials](http://specs.enanomapper.net/oecd/)
+
 Repository Structure
 ====================
 
