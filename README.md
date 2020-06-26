@@ -2,7 +2,7 @@ Specifications
 ==============
 
 Specifications in this repository are written up within or in collaboration
-with the eNanoMapper project to describe how something could be done. In fact,
+with the NanoCommons project to describe how something could be done. In fact,
 if enough people do it that way, the specification becomes a standard.
 
 All specifications in this repository are licensed openly, allowing anyone
