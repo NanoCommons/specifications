@@ -11,8 +11,10 @@ While the license would typically allow you to make modifications, it is
 kindly requested to do this in a communal manner, as to not disrupt the
 standardization process. Hence, we speak of Open Specifications.
 
-* [eNanoMapper Ontology IRIs for the JRC representative industrial nanomaterials](https://enanomapper.github.io/specifications/jrc/)
-* [eNanoMapper Ontology IRIs for the OECD nanomaterials](https://enanomapper.github.io/specifications/oecd/)
+* [Ontology IRIs for the JRC representative industrial nanomaterials](https://nanocommons.github.io/specifications/jrc/)
+* [Ontology IRIs for the OECD nanomaterials](https://nanocommons.github.io/specifications/oecd/)
+
+This project was taken over from eNanoMapper at the start of NanoCommons.
 
 Repository Structure
 ====================
@@ -35,3 +37,10 @@ Requirements
 It uses RefSpec.js and a customized version of the matching CSS
 ([license](http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231))
 from http://www.w3.org/TR/respec-js/.
+
+## Acknowledgement
+
+This registry is supported by [NanoCommons](https://www.nanocommons.eu/).
+NanoCommons has received funding from European Union
+Horizon 2020 Programme (H2020) under grant agreement nº [731032](https://cordis.europa.eu/project/rcn/212586/en).
+
