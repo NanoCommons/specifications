@@ -48,7 +48,7 @@
   <section id="sotd">
     <h4>Intended audience</h4>
     <p>
-      This document is aimed at everyone working in the NanoSafety Cluster.
+      This document is aimed at everyone working in the <a href="https://www.nanosafetycluster.eu/">EU NanoSafety Cluster</a>.
     </p>
   </section>
   <section id="abstract">
@@ -324,6 +324,116 @@
     <h3>Latest 10 publications</h3>
     <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fdate%20%3Fwork%20%3FworkLabel%20%3Ftopics%20%0AWITH%20%7B%0A%20%20SELECT%20DISTINCT%20%3Fwork%20WHERE%20%7B%0A%20%20%20%20%3Fwork%20wdt%3AP921%20%2F%20%28wdt%3AP361%2B%20%7C%20wdt%3AP1269%2B%20%7C%20%28wdt%3AP31%2a%20%2F%20wdt%3AP279%2a%29%20%29%20wd%3AQ47461491%20.%0A%20%20%7D%0A%7D%20AS%20%25works%0AWITH%20%7B%0A%20%20SELECT%20%28MAX%28%3Fdates%29%20as%20%3Fdatetime%29%20%3Fwork%20%28GROUP_CONCAT%28DISTINCT%20%3Ftopic_label%3B%20separator%3D%22%20%2F%2F%20%22%29%20AS%20%3Ftopics%29%0A%20%20WHERE%20%7B%0A%20%20%20%20INCLUDE%20%25works%0A%20%20%20%20%3Fwork%20wdt%3AP921%20%3Ftopic%20.%20%0A%20%20%20%20OPTIONAL%20%7B%20%3Fwork%20wdt%3AP577%20%3Fdates%20.%20%7D%0A%20%20%20%20%3Ftopic%20rdfs%3Alabel%20%3Ftopic_label%20.%20%20FILTER%20%28lang%28%3Ftopic_label%29%20%3D%20%27en%27%29%0A%20%20%7D%0A%20%20GROUP%20BY%20%3Fwork%0A%7D%20AS%20%25result%0AWHERE%20%7B%0A%20%20INCLUDE%20%25result%0A%0A%20%20%23%20There%20is%20a%20problem%20with%20BC%20dates%0A%20%20%23%20BIND%28xsd%3Adate%28%3Fdatetime%29%20AS%20%3Fdate%29%0A%20%20BIND%28REPLACE%28STR%28%3Fdatetime%29%2C%20%27T.%2a%27%2C%20%27%27%29%20AS%20%3Fdate%29%0A%20%20%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%2Cda%2Cde%2Ces%2Cfr%2Cjp%2Cnl%2Cno%2Cru%2Csv%2Czh%22.%20%7D%0A%7D%0AGROUP%20BY%20%3Fdate%20%3Fwork%20%3FworkLabel%20%3FtopicsUrl%20%3Ftopics%0AORDER%20BY%20DESC%28%3Fdate%29%0ALIMIT%2010" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
   </section>
+  <section class='informative'>
+    <h3>Latest liteature newsfeeds for the JRC materials</h3>
+    <p>
+      Newsfeeds are technologies to "register" for a particular feed, providing news about a topic
+      in a newsreader [[MurrayRust2004]]. <a href="https://feedly.com/">Feedly</a> is an example, which grew massively
+      after Google Reader ceased to exist. <a href="https://en.wikipedia.org/wiki/RSS">RDF Site Summary</a> (RSS) feeds were a common
+      technology, later complemented by <a href="https://en.wikipedia.org/wiki/Atom_(web_standard)">Atom</a>.
+    </p>
+    <p>
+      Scholia makes RSS feeds available with literature specific about the JRC materials, which is summarized in the above
+      section.
+    </p>
+        <table>
+      <tr>
+        <td style="font-weight: bold">JRC nanomaterial</td>
+        <td style="font-weight: bold">RSS feed</td>
+      </tr>
+      <tr>
+        <td>JRCNM01000a</td><td><a href="https://scholia.toolforge.org/topic/Q27918612/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01001a</td><td><a href="https://scholia.toolforge.org/topic/Q47461406/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01002a</td><td><a href="https://scholia.toolforge.org/topic/Q47461416/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01003a</td><td><a href="https://scholia.toolforge.org/topic/Q47461418/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01004a</td><td><a href="https://scholia.toolforge.org/topic/Q47461419/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01005a</td><td><a href="https://scholia.toolforge.org/topic/Q47461422/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01100a</td><td><a href="https://scholia.toolforge.org/topic/Q47462004/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM01101a</td><td><a href="https://scholia.toolforge.org/topic/Q47462008/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02000av</td><td><a href="https://scholia.toolforge.org/topic/Q47462022/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02001a</td><td><a href="https://scholia.toolforge.org/topic/Q47468470/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02002a</td><td><a href="https://scholia.toolforge.org/topic/Q47468473/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02003a</td><td><a href="https://scholia.toolforge.org/topic/Q78642247/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02004a</td><td><a href="https://scholia.toolforge.org/topic/Q47461416/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02004b</td><td><a href="https://scholia.toolforge.org/topic/Q78642927/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM02101a</td><td><a href="https://scholia.toolforge.org/topic/Q78643426/latest-works/rss">latest literature</a>
+      </tr>
+      <tr>
+        <td>JRCNM02102a</td><td><a href="https://scholia.toolforge.org/topic/Q47461933/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM03000a</td><td><a href="https://scholia.toolforge.org/topic/Q94632421/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM03300a</td><td><a href="https://scholia.toolforge.org/topic/Q58631733/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM03301a</td><td><a href="https://scholia.toolforge.org/topic/Q78598603/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM04000a</td><td><a href="https://scholia.toolforge.org/topic/Q47462019/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM04001a</td><td><a href="https://scholia.toolforge.org/topic/Q47462603/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM50001a</td><td><a href="https://scholia.toolforge.org/topic/Q94632692/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM10200a</td><td><a href="https://scholia.toolforge.org/topic/Q87125303/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM10201a</td><td><a href="https://scholia.toolforge.org/topic/Q78603081/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM10202a</td><td><a href="https://scholia.toolforge.org/topic/Q87124091/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM10404</td><td><a href="https://scholia.toolforge.org/topic/Q58630711/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM40011a</td><td><a href="https://scholia.toolforge.org/topic/Q113720986/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM62001a</td><td><a href="https://scholia.toolforge.org/topic/Q75188647/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM62002a</td><td><a href="https://scholia.toolforge.org/topic/Q75188523/latest-works/rss">latest literature</a></td>
+      </tr>
+      <tr>
+        <td>JRCNM62101a</td><td><a href="https://scholia.toolforge.org/topic/Q75188316/latest-works/rss">latest literature</a></td>
+      </tr>
+    </table>
+
+  </subsection>
 </body>
 
 </html>
