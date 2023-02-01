@@ -1,4 +1,0 @@
-berjon.biblio = {
-   "VanRijn2022" : "Van Rijn, J., Afantitis A, Culha M, Dusinska M, Exner TE, Jeliazkova N, Longhin, E.M., Lynch, I., Melagraki, G., Nymark, P., Papadiamantis, A.G., Winkler, D.A., Yilmaz, H., Willighagen, E. August 2022. European Registry of Materials: global, unique identifiers for (undisclosed) nanomaterials. J Cheminform 14(1), 57, <a href=\"https://doi.org/10.1186/s13321-022-00614-7\">10.1186/s13321-022-00614-7</a>.",
-   "Afantitis2020": "Afantitis, A., Melagraki, G., Isigonis, P., Tsoumanis, A., Varsou, D. D., Valsami-Jones, E., ... & Lynch, I. (2020). NanoSolveIT Project: Driving nanoinformatics research to develop innovative and integrated tools for in silico nanosafety assessment. Computational and structural biotechnology journal, 18, 583-602, <a href=\"https://doi.org/10.1016/j.csbj.2020.02.023\">10.1016/j.csbj.2020.02.023</a>."
-}
